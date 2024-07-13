@@ -1,0 +1,37 @@
+experiment:
+  name: 'my_experiment'
+
+model:
+  name: 'SimpleNN_MNIST'
+  input_size: 784
+  hidden_size: 128
+  output_size: 10
+  activation: 'relu'
+  dropout_rate: 0.5
+  weight_init: 'xavier'
+
+training:
+  epochs: 20
+  learning_rate: 0.001
+  batch_size: 64
+  optimizer: 'adam'
+  momentum: 0.9
+  weight_decay: 0.0005
+  scheduler: 'step_lr'
+  step_size: 10
+  gamma: 0.1
+
+data:
+  dataset: 'MNIST'
+  data_dir: './data'
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+  shuffle: True
+  num_workers: 4
+
+logging:
+  log_dir: './logs'
+  log_interval: 10
+  save_model: True
+  save_interval: 5
